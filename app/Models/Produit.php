@@ -1,6 +1,11 @@
 <?php
 
 namespace App\Models;
+use App\Models\User ;
+use App\Models\Categorie;
+use App\Models\Commentaire;
+use App\Models\Favori;
+use App\Models\ProduitImage;
 
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,5 +19,28 @@ class Produit extends Model
 
     protected $fillable = ['categorie_id','user_id','name', 'description', 'prix'];
 
-   
+    public function user() : BelongsTo
+    {
+        return $this->belongsTo(User::class) ; 
+    }
+
+    public function categorie() : BelongsTo
+    {
+        return $this->belongsTo(Categorie::class) ; 
+    }
+
+    public function commentaires():HasMany
+    {
+        return $this->hasMany(Commentaire::class);
+    }
+
+    public function favoris():HasMany
+    {
+        return $this->hasMany(Favori::class);
+    }
+
+    public function produitImages():HasMany
+    {
+        return $this->hasMany(ProduitImage::class);
+    }
 }
