@@ -34,6 +34,11 @@ class ProduitResource extends Resource
                     ->maxLength(50),
                 Forms\Components\Textarea::make('description')
                     ->maxLength(65535),
+                Forms\Components\FileUpload::make('defaultImage'),
+                Forms\Components\FileUpload::make('carouselImage')
+                    ->multiple()
+                    ->minFiles(1)
+                    ->maxFiles(4),
                 Forms\Components\TextInput::make('prix')
                     ->required(),
             ]);

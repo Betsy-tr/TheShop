@@ -17,7 +17,7 @@ class Produit extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['categorie_id','user_id','name', 'description', 'prix'];
+    protected $fillable = ['categorie_id','user_id','name', 'description', 'prix','defaultImage','carouselImage'];
 
     public function user() : BelongsTo
     {
