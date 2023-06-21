@@ -61,4 +61,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Favori::class);
     }
+
+    //Autorisation admin 
+
+    public function canAccessFilament(): bool
+    {
+        return $this->admin == 1; 
+    }
 }
