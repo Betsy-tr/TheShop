@@ -19,6 +19,8 @@ class Produit extends Model
 
     protected $fillable = ['categorie_id','user_id','name', 'description', 'prix','defaultImage','carouselImage'];
 
+    protected $casts = ['carouselImage' => 'array',];
+
     public function user() : BelongsTo
     {
         return $this->belongsTo(User::class) ; 
@@ -39,8 +41,4 @@ class Produit extends Model
         return $this->hasMany(Favori::class);
     }
 
-    public function produitImages():HasMany
-    {
-        return $this->hasMany(ProduitImage::class);
-    }
 }

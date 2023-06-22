@@ -50,6 +50,8 @@ class ProduitResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('categorie.name'),
                 Tables\Columns\TextColumn::make('user.name'),
+                Tables\Columns\ImageColumn::make('defaultImage')
+                    ->circular(),
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('description'),
                 Tables\Columns\TextColumn::make('prix'),
