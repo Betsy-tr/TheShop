@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->float('prix',7,2);
             $table->text('defaultImage')->nullable();
-            $table->text('carouselImage')->nullable();  
+            $table->text('carouselImage')->nullable(); 
             $table->timestamps();
         });
     }
